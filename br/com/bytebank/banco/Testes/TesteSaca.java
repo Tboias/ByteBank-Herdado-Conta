@@ -1,8 +1,10 @@
-package Testes;
+package br.com.bytebank.banco.Testes;
+
+import br.com.bytebank.banco.modelo.*;
 
 public class TesteSaca {
     public static void main(String[] args) {
-        modelo.Conta cc = new modelo.ContaCorrente(043, 8181658);
+        Conta cc = new ContaCorrente(043, 8181658);
 
         cc.depositar(200);
 

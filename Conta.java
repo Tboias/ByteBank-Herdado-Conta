@@ -34,23 +34,17 @@ public abstract class Conta {
 
     public abstract void depositar(double valor);
 
-    public boolean sacar(double valor) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
+    public void sacar(double valor) throws SaldoException {
+        if (this.saldo < valor) {
+            throw new SaldoException(
+                    "Saldo Insuficiente ! " + " Seu Saldo : " + this.saldo + " Valor Sacado : " + valor);
         }
+        this.saldo -= valor;
     }
 
-    public boolean transferir(double valor, Conta destino) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
-            destino.saldo += valor;
-            return true;
-        } else {
-            return false;
-        }
+    public void transferir(double valor, Conta destino) throws SaldoException {
+        this.sacar(valor);
+        destino.saldo += valor;
     }
 
     public void setTitular(Cliente titular) {

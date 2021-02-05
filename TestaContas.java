@@ -1,6 +1,6 @@
 
 public class TestaContas {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SaldoException {
         ContaCorrente cc = new ContaCorrente(134, 14556);
         cc.depositar(100.0);
 

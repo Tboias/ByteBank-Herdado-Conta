@@ -1,5 +1,3 @@
-import javax.swing.GroupLayout.SequentialGroup;
-
 public class TesteTributavel {
     public static void main(String[] args) {
         ContaCorrente cc = new ContaCorrente(043, 12546);
